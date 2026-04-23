@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Summary Result</title>
+</head>
+<body>
+    <h1>Summary Result</h1>
+
+    <p><strong>Document ID:</strong> {{ document[0] }}</p>
+    <p><strong>Filename:</strong> {{ document[1] }}</p>
+    <p><strong>S3 Key:</strong> {{ document[2] }}</p>
+    <p><strong>Status:</strong> {{ document[4] }}</p>
+    <p><strong>Uploaded At:</strong> {{ document[5] }}</p>
+
+    <h2>Generated Summary</h2>
+    <pre style="white-space: pre-wrap;">{{ document[3] }}</pre>
+
+    <p><a href="{{ url_for('index') }}">Upload another document</a></p>
+    <p><a href="{{ url_for('history') }}">View all documents</a></p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document History</title>
+</head>
+<body>
+    <h1>Uploaded Documents</h1>
+
+    {% if documents %}
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>ID</th>
+                <th>Filename</th>
+                <th>S3 Key</th>
+                <th>Status</th>
+                <th>Uploaded At</th>
+                <th>View</th>
+            </tr>
+            {% for doc in documents %}
+            <tr>
+                <td>{{ doc[0] }}</td>
+                <td>{{ doc[1] }}</td>
+                <td>{{ doc[2] }}</td>
+                <td>{{ doc[4] }}</td>
+                <td>{{ doc[5] }}</td>
+                <td><a href="{{ url_for('view_result', document_id=doc[0]) }}">Open</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No documents uploaded yet.</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('index') }}">Back to upload page</a></p>
+</body>
+</html>

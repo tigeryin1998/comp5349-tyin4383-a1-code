@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document Summary App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 760px;
+            margin: 40px auto;
+            line-height: 1.5;
+        }
+
+        form {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            width: fit-content;
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        button[disabled] {
+            cursor: wait;
+            opacity: 0.7;
+        }
+
+        .status-box {
+            display: none;
+            margin-top: 20px;
+            padding: 14px 16px;
+            border: 1px solid #b7d7f6;
+            background: #eef6ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Summary Web App</h1>
+
+    <p>Upload a small PDF document to generate a summary.</p>
+    <p><strong>Supported format:</strong> .pdf only</p>
+    <p><strong>Maximum file size:</strong> {{ max_file_size_mb }} MB</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li><strong>{{ message }}</strong></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form
+        action="{{ url_for('upload_document') }}"
+        method="post"
+        enctype="multipart/form-data"
+        id="upload-form"
+    >
+        <label for="document">Choose a PDF file:</label>
+        <input type="file" name="document" id="document" accept=".pdf" required>
+        <button type="submit" id="submit-button">Upload and Summarise</button>
+    </form>
+
+    <div class="status-box" id="upload-status">
+        <strong>Processing your document...</strong>
+        <p>
+            The PDF is being uploaded to S3 and sent to Gemini for summarisation.
+            This can take a little while for larger files, so please keep this page open.
+        </p>
+    </div>
+
+    <p><a href="{{ url_for('history') }}">View uploaded documents</a></p>
+
+    <script>
+        const uploadForm = document.getElementById("upload-form");
+        const submitButton = document.getElementById("submit-button");
+        const uploadStatus = document.getElementById("upload-status");
+
+        uploadForm.addEventListener("submit", () => {
+            submitButton.disabled = true;
+            submitButton.textContent = "Uploading...";
+            uploadStatus.style.display = "block";
+        });
+    </script>
+</body>
+</html>
