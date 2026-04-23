@@ -13,7 +13,7 @@ import google.generativeai as genai
 # Update with proper values before running the app
 # =========================================================
 
-AWS_REGION = "us-east-1"
+AWS_REGION = "ap-sountheast-1"
 S3_BUCKET_NAME = "comp5349-tyin4383-a1-docs-862231074268-ap-southeast-2-an"
 
 DB_HOST = "comp5349-tyin4383-a1-db.chi8eme8yqe0.ap-southeast-2.rds.amazonaws.com"
