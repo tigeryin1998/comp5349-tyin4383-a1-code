@@ -14,15 +14,15 @@ import google.generativeai as genai
 # =========================================================
 
 AWS_REGION = "us-east-1"
-S3_BUCKET_NAME = "YOUR_S3_BUCKET_NAME"
+S3_BUCKET_NAME = "comp5349-tyin4383-a1-docs-862231074268-ap-southeast-2-an"
 
-DB_HOST = "YOUR_RDS_ENDPOINT"
+DB_HOST = "comp5349-tyin4383-a1-db.chi8eme8yqe0.ap-southeast-2.rds.amazonaws.com"
 DB_PORT = 5432
-DB_NAME = "postgres"
-DB_USER = "YOUR_DB_USERNAME"
-DB_PASSWORD = "YOUR_DB_PASSWORD"
+DB_NAME = "comp5349-tyin4383-a1-db"
+DB_USER = "postgres"
+DB_PASSWORD = "aFX9mCMh3GDq3LpIgtwD"
 
-GOOGLE_API_KEY = "YOUR_GEMINI_API_KEY"
+GOOGLE_API_KEY = "AIzaSyDxEMFk3BDPRHCBvxeOssnnyvxBf1qBAiQ"
 
 ALLOWED_EXTENSIONS = {"pdf"}
 MAX_FILE_SIZE_MB = 5
