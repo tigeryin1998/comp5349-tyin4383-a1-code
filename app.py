@@ -18,7 +18,7 @@ S3_BUCKET_NAME = "comp5349-tyin4383-a1-docs-862231074268-ap-southeast-2-an"
 
 DB_HOST = "comp5349-tyin4383-a1-db.chi8eme8yqe0.ap-southeast-2.rds.amazonaws.com"
 DB_PORT = 5432
-DB_NAME = "comp5349-tyin4383-a1-db"
+DB_NAME = "postgres"
 DB_USER = "postgres"
 DB_PASSWORD = "aFX9mCMh3GDq3LpIgtwD"
 

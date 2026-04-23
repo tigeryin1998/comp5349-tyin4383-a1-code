@@ -6,11 +6,11 @@ if ! command -v psql >/dev/null 2>&1; then
     exit 1
 fi
 
-PGHOST="YOUR_RDS_ENDPOINT"
+PGHOST="comp5349-tyin4383-a1-db.chi8eme8yqe0.ap-southeast-2.rds.amazonaws.com"
 PGPORT="5432"
 PGDATABASE="postgres"
-PGUSER="YOUR_DB_USERNAME"
-PGPASSWORD="YOUR_DB_PASSWORD"
+PGUSER="postgres"
+PGPASSWORD="aFX9mCMh3GDq3LpIgtwD"
 
 export PGPASSWORD
 
